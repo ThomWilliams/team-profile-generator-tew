@@ -1,0 +1,19 @@
+{
+  "name": "team-profile-generator-tew",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomWilliams/team-profile-generator-tew.git"
+  },
+  "author": "Thom Williams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThomWilliams/team-profile-generator-tew/issues"
+  },
+  "homepage": "https://github.com/ThomWilliams/team-profile-generator-tew#readme"
+}
