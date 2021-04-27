@@ -122,3 +122,8 @@ init();
 /// PSEUDOCODE / TO DO
 // If statement for if Engineer or Intern Selected - then add data to HTML
 
+// WEDS AM
+// HTML output - format cards and jumbotron header
+// Additional steps needed to get started - see readme...
+// Look through week 10 notes
+
