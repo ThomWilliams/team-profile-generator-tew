@@ -36,7 +36,7 @@ const managerQuestions = () => {
 ])
 }
 
-// Creates array of questions for user input
+// Creates array of questions for Engineer user input
 const engineerQuestions = () => {
     return inquirer.prompt([
        {
@@ -52,12 +52,45 @@ const engineerQuestions = () => {
        {
            type: 'input',
            name: 'engineerEmail',
-           message: 'Engineer - please enter your email address: ',
+           message: 'Engineer - please enter employee email address: ',
        },
        {
            type: 'input',
            name: 'engineerGithub',
-           message: 'Engineer - please enter your GitHub username: ',
+           message: 'Engineer - please enter employee GitHub username: ',
+       },
+       {
+        type: 'list',
+        message: 'Engineer - Would you like to add another engineer or intern?',
+        name: 'addEngineer',
+        choices: ['Add Engineer', 'Add Intern', 'Team Complete - Finish building team'],
+    },
+   ])
+} 
+
+
+// Creates array of questions for Intern user input
+const internQuestions = () => {
+    return inquirer.prompt([
+       {
+           type: 'input',
+           name: 'internName',
+           message: 'Intern - please enter intern name: ',
+       },
+       {
+           type: 'input',
+           name: 'internId',
+           message: 'Intern - please enter intern ID number: ',
+       },
+       {
+           type: 'input',
+           name: 'internEmail',
+           message: 'Intern - please enter intern email address: ',
+       },
+       {
+           type: 'input',
+           name: 'internSchool',
+           message: 'Intern - please enter the school of the intern: ',
        },
        {
         type: 'list',
@@ -68,11 +101,10 @@ const engineerQuestions = () => {
    ])
 } 
 
-
 // writes data to file
 const writeToFile = util.promisify(fs.writeFile);
 
-// Function initializes manager inut data to app
+// Function initializes manager input data to app
 const initManager = () => {
     managerQuestions() 
     .then((data) => writeToFile('index.html', generateHTML(data)))
@@ -80,18 +112,24 @@ const initManager = () => {
     .catch((err) => console.error(err));
 };
 
-
-// Function initializes engineer inut data to app
+// Function initializes engineer input data to app
 const initEngineer = () => {
-    engineerQuestions() 
+    engineerQuestions()
     .then((data) => writeToFile('index.html', generateHTML(data)))
     .then(() => console.log('Successfully written engineer details to index.html'))
     .catch((err) => console.error(err));
 };
 
+// Function initializes intern input data to app
+const initIntern = () => {
+    internQuestions() 
+    .then((data) => writeToFile('index.html', generateHTML(data)))
+    .then(() => console.log('Successfully written intern details to index.html'))
+    .catch((err) => console.error(err));
+};
 
-
-// Function called to initialize app
+// Functions called to initialize app
 initManager();
 initEngineer();
+initIntern();
 
