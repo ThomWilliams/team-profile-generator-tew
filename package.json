@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ThomWilliams/team-profile-generator-tew#readme",
   "dependencies": {
+    "bootstrap": "^4.6.0",
     "inquirer": "^8.0.0"
   }
 }

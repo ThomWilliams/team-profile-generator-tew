@@ -2,6 +2,7 @@
 const inquirer = require("inquirer");
 const fs = require('fs');
 const util = require('util');
+const bootstrap = require("bootstrap");
 
 
 // Creates array of questions for user input
@@ -13,7 +14,7 @@ const managerQuestions = () => {
         message: 'Team Manager - please enter your name: ',
     },
     {
-        type: 'input',
+        type: 'number',
         name: 'managerId',
         message: 'Team Manager - please enter your employee ID number: ',
     },
@@ -45,7 +46,7 @@ const engineerQuestions = () => {
            message: 'Engineer - please enter employee name: ',
        },
        {
-           type: 'input',
+           type: 'number',
            name: 'engineerId',
            message: 'Engineer - please enter employee ID number: ',
        },
@@ -78,7 +79,7 @@ const internQuestions = () => {
            message: 'Intern - please enter intern name: ',
        },
        {
-           type: 'input',
+           type: 'number',
            name: 'internId',
            message: 'Intern - please enter intern ID number: ',
        },
