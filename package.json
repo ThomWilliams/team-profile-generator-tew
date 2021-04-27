@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ThomWilliams/team-profile-generator-tew/issues"
   },
-  "homepage": "https://github.com/ThomWilliams/team-profile-generator-tew#readme"
+  "homepage": "https://github.com/ThomWilliams/team-profile-generator-tew#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
 }

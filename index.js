@@ -105,31 +105,19 @@ const internQuestions = () => {
 const writeToFile = util.promisify(fs.writeFile);
 
 // Function initializes manager input data to app
-const initManager = () => {
-    managerQuestions() 
+const init = () => {
+    questions() 
     .then((data) => writeToFile('index.html', generateHTML(data)))
-    .then(() => console.log('Successfully written manager details to index.html'))
-    .catch((err) => console.error(err));
-};
-
-// Function initializes engineer input data to app
-const initEngineer = () => {
-    engineerQuestions()
-    .then((data) => writeToFile('index.html', generateHTML(data)))
-    .then(() => console.log('Successfully written engineer details to index.html'))
-    .catch((err) => console.error(err));
-};
-
-// Function initializes intern input data to app
-const initIntern = () => {
-    internQuestions() 
-    .then((data) => writeToFile('index.html', generateHTML(data)))
-    .then(() => console.log('Successfully written intern details to index.html'))
+    .then(() => console.log('Successfully written team details to index.html'))
     .catch((err) => console.error(err));
 };
 
 // Functions called to initialize app
-initManager();
-initEngineer();
-initIntern();
+init();
+
+
+
+
+/// PSEUDOCODE / TO DO
+// If statement for if Engineer or Intern Selected - then add data to HTML
 
