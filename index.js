@@ -29,28 +29,69 @@ const managerQuestions = () => {
     },
     {
         type: 'list',
-        message: 'Team Manager - would you like to add an engineer or intern? (Y / N): ',
+        message: 'Would you like to add another engineer or intern?',
         name: 'addEngineer',
-        choices: ['Y', 'N',],
+        choices: ['Add Engineer', 'Add Intern', 'Team Complete - Finish building team'],
     },
 ])
 }
 
+// Creates array of questions for user input
+const engineerQuestions = () => {
+    return inquirer.prompt([
+       {
+           type: 'input',
+           name: 'engineerName',
+           message: 'Engineer - please enter employee name: ',
+       },
+       {
+           type: 'input',
+           name: 'engineerId',
+           message: 'Engineer - please enter employee ID number: ',
+       },
+       {
+           type: 'input',
+           name: 'engineerEmail',
+           message: 'Engineer - please enter your email address: ',
+       },
+       {
+           type: 'input',
+           name: 'engineerGithub',
+           message: 'Engineer - please enter your GitHub username: ',
+       },
+       {
+        type: 'list',
+        message: 'Would you like to add another engineer or intern?',
+        name: 'addEngineer',
+        choices: ['Add Engineer', 'Add Intern', 'Team Complete - Finish building team'],
+    },
+   ])
+} 
 
 
 // writes data to file
 const writeToFile = util.promisify(fs.writeFile);
 
-// Function initializes manager questions to app
-const init = () => {
+// Function initializes manager inut data to app
+const initManager = () => {
     managerQuestions() 
     .then((data) => writeToFile('index.html', generateHTML(data)))
-    .then(() => console.log('Successfully written to index.html'))
+    .then(() => console.log('Successfully written manager details to index.html'))
+    .catch((err) => console.error(err));
+};
+
+
+// Function initializes engineer inut data to app
+const initEngineer = () => {
+    engineerQuestions() 
+    .then((data) => writeToFile('index.html', generateHTML(data)))
+    .then(() => console.log('Successfully written engineer details to index.html'))
     .catch((err) => console.error(err));
 };
 
 
 
 // Function called to initialize app
-init();
+initManager();
+initEngineer();
 
