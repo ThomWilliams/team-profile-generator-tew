@@ -1,9 +1,13 @@
 // packages needed for this application
-const inquirer = require("inquirer");
+const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
 const bootstrap = require("bootstrap");
 const jest = require("jest");
+const generateEmployee = require('./lib/employee');
+const generateIntern = require('./lib/intern');
+const generateManager = require('./lib/manager');
+const generateEngineer = require('./lib/engineer');
 
 
 // Creates array of questions for user input
@@ -109,7 +113,7 @@ const writeToFile = util.promisify(fs.writeFile);
 // Function initializes manager input data to app
 const init = () => {
     questions() 
-    .then((data) => writeToFile('index.html', generateHTML(data)))
+    .then((data) => writeToFile("index.html", generateHTML(data)))
     .then(() => console.log('Successfully written team details to index.html'))
     .catch((err) => console.error(err));
 };
