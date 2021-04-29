@@ -3,6 +3,7 @@ const inquirer = require("inquirer");
 const fs = require('fs');
 const util = require('util');
 const bootstrap = require("bootstrap");
+const jest = require("jest");
 
 
 // Creates array of questions for user input
