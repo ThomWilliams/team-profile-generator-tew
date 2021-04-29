@@ -16,12 +16,12 @@ function generateManager(data) {
                     <h5 class="card-title" id="role">Manager</h5>
                   </div>
                   <ul class="list-group list-group-flush">
-                  <li class="list-group-item text-dark" id="managerName">Name</li>
-                    <li class="list-group-item text-dark" id="managerId">ID No.</li>
-                    <li class="list-group-item text-dark" id="managerOffice">Office</li>
+                  <li class="list-group-item text-dark" id="managerName">${data.managerName}Name</li>
+                    <li class="list-group-item text-dark" id="managerId">${data.managerId}ID No.</li>
+                    <li class="list-group-item text-dark" id="managerOffice">${data.managerOffice}Office</li>
                   </ul>
                   <div class="card-body ">
-                    <a href="#" class="card-link text-white" id="managerEmail">Email Address</a>
+                    <a href="mailto:${data.managerEmail}" class="card-link text-white" id="managerEmail">Email Address</a>
                   </div>
               </div>
             </div>

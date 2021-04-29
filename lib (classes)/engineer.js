@@ -19,13 +19,13 @@ function generateEngineer(data) {
     </div>
     <ul class="list-group list-group-flush">
     <li class="list-group-item text-dark" id="engineerName">${data.engineerName}Name</li>
-      <li class="list-group-item text-dark" id="engineerId">ID No.</li>
+      <li class="list-group-item text-dark" id="engineerId">${data.engineerId}ID No.</li>
       <li class="list-group-item">
-        <a href="#" class="card-link" id="engineerGithub">GitHub Link</a>
+        <a href="#" class="card-link" id="engineerGithub">${data.engineerGithub}GitHub Link</a>
       </li>
     </ul>
     <div class="card-body ">
-        <a href="#" class="card-link text-white" id="engineerEmail">Email Address</a>
+        <a href="href="mailto:${data.engineerEmail}" class="card-link text-white" id="engineerEmail">Email Address</a>
     </div>
 </div>
 </div>  
