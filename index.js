@@ -106,7 +106,9 @@ const init = () => {
             },
           
           ]).then(answers => {
-              
+              const newEngineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+              teamMambers.push(newEngineer);
+              createRestOfTeam(); 
           });
         };
       
