@@ -16,7 +16,7 @@ const generateTeam = team => {
                 <li class="list-group-item text-dark" id="managerOffice">${manager.getOfficeNumber()}</li>
               </ul>
               <div class="card-body ">
-                <a href="#" class="card-link text-light" id="managerEmail">${manager.getEmail()}</a>
+                <a href="mailto:${manager.getEmail()}" class="card-link text-light" id="managerEmail">${manager.getEmail()}</a>
               </div>
           </div>
         </div>`
@@ -32,11 +32,11 @@ const generateTeam = team => {
               <li class="list-group-item text-dark" id="engineerName">${engineer.getName()}</li>
                 <li class="list-group-item text-dark" id="engineerId">${engineer.getId()}</li>
                 <li class="list-group-item">
-                  <a href="#" class="card-link" id="engineerGithub">${engineer.getGithub()}</a>
+                  <a href="https://github.com/${engineer.getGithub()}" class="card-link" id="engineerGithub">${engineer.getGithub()}</a>
                 </li>
               </ul>
               <div class="card-body ">
-                  <a href="#" class="card-link text-light" id="engineerEmail">${engineer.getEmail()}</a>
+                  <a href="#mailto:${engineer.getEmail()} class="card-link text-light" id="engineerEmail">${engineer.getEmail()}</a>
               </div>
           </div>
         </div>  `
@@ -57,7 +57,7 @@ const generateTeam = team => {
                 <li class="list-group-item text-dark" id="internSchool">${intern.getSchool()}</li>
               </ul>
               <div class="card-body ">
-                  <a href="#" class="card-link text-light" id="internEmail">${intern.getEmail()}</a>
+                  <a href="mailto:${intern.getEmail()}" class="card-link text-light" id="internEmail">${intern.getEmail()}</a>
               </div>
           </div>
         </div>
