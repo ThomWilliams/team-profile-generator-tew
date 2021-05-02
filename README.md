@@ -15,7 +15,9 @@
   
   ## Description 
   
-  A professional team profile generator that uses node to generate a HTML file, populated with employee cards displaying data inputted by the user.
+  A professional team profile generator that uses node to generate a HTML file, populated with dyanmically generated employee cards displaying data inputted by the user.
+
+  Bootstrap CSS Framework used for the styling.
   
   ## Installation
   
@@ -43,6 +45,8 @@
   ## Tests
   
   To run tests using Jest please enter  npm test -- FileToBeTested
+
+    ![Screenshot of the Passed Tests](./assets/Tests_passed.png)
   
   ## Questions
   
@@ -61,8 +65,8 @@
 
   ## Video + Screenshot
   
-  [VIDEO DEMO](https://drive.google.com/file/d/1bDAGLDqIS2NkIUhAODIZ7IToAvi5m1-U/view?usp=sharing)
+  [VIDEO DEMO](https://drive.google.com/file/d/139v3jEs7axrVxUYXG-27nflIY-wjp3NZ/view?usp=sharing)
 
-  ![Screenshot of the example Readme](../Screenshots_Video/Readme_example_screenshot.png)
+  ![Screenshot of the Mobile version](./assets/mobile.png)
 
-  
+  ![Screenshot of the Desktop version](./assets/Desktop.png)

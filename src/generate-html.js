@@ -36,7 +36,7 @@ const generateTeam = team => {
                 </li>
               </ul>
               <div class="card-body ">
-                  <a href="#mailto:${engineer.getEmail()} class="card-link text-light" id="engineerEmail">${engineer.getEmail()}</a>
+                  <a href="#mailto:${engineer.getEmail()}" class="card-link text-light" id="engineerEmail">${engineer.getEmail()}</a>
               </div>
           </div>
         </div>  `
@@ -96,7 +96,7 @@ module.exports = team => {
     <main class="container-fluid">
 
       <div class="d-flex flex-wrap align-content-around">
-       ${generateTeam(team)};
+       ${generateTeam(team)}
       
         
     </main>
