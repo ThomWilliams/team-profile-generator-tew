@@ -3,9 +3,9 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
 const generateHtml = require("./src/generate-html.js");
-const generateIntern = require("./lib/intern");
-const generateManager = require("./lib/manager");
-const generateEngineer = require("./lib/engineer");
+const Intern = require("./lib/intern");
+
+const Engineer = require("./lib/engineer");
 const Manager = require("./lib/manager");
 
 const outputFolder = path.resolve(__dirname, "output");
@@ -135,19 +135,13 @@ const init = () => {
               name: "internSchool",
               message: "Intern - please enter the school of the intern: ",
             },
-            {
-              type: "list",
-              message: "Would you like to add another engineer or intern?",
-              name: "addEngineer",
-              choices: [
-                "Add Engineer",
-                "Add Intern",
-                "Team Complete - Finish building team",
-              ],
-            },
-          ]);
-        };
-      ;
+            ]).then(answers => {
+                const newIntern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+                teamMambers.push(newIntern);
+                createRestOfTeam(); 
+         });
+      };
+          
 
       const buildTeamHTML = () => {
           if(!fs.existsSync(outputFolder)){

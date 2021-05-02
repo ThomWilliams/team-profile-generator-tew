@@ -21,9 +21,54 @@ const generateTeam = team => {
           </div>
         </div>`
     }
+    const generateEngineerHTML = engineer => {
+        return `   <!-- Engineer Card -->
+        <div class="col-sm-4 d-flex justify-content-center">  
+          <div class="card text-white bg-primary mb-3" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title" id="role">Engineer</h5>
+              </div>
+              <ul class="list-group list-group-flush">
+              <li class="list-group-item text-dark" id="engineerName">${engineer.getName()}</li>
+                <li class="list-group-item text-dark" id="engineerId">${engineer.getId()}</li>
+                <li class="list-group-item">
+                  <a href="#" class="card-link" id="engineerGithub">${engineer.getGithub()}</a>
+                </li>
+              </ul>
+              <div class="card-body ">
+                  <a href="#" class="card-link text-white" id="engineerEmail">${engineer.getEmail()}</a>
+              </div>
+          </div>
+        </div>  `
+    }
 
+
+    const generateInternHTML = intern => {
+        return `<!-- Intern Card -->
+       
+        <div class="col-sm-4 d-flex justify-content-center">  
+          <div class="card text-white bg-success mb-3" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title" id="role">Intern</h5>
+              </div>
+              <ul class="list-group list-group-flush">
+              <li class="list-group-item text-dark" id="internName">${intern.getName()}</li>
+                <li class="list-group-item text-dark" id="internId">${intern.getId()}</li>
+                <li class="list-group-item text-dark" id="internSchool">${intern.getSchool()}</li>
+              </ul>
+              <div class="card-body ">
+                  <a href="#" class="card-link text-white" id="internEmail">${intern.getEmail()}</a>
+              </div>
+          </div>
+        </div>
+      </div>`
+    }
 
     htmlForEmployees.push(team.filter(employee => employee.getRole() === "Manager").map(manager => generateManagerHTML(manager)) )
+
+    htmlForEmployees.push(team.filter(employee => employee.getRole() === "Engineer").map(engineer => generateEngineerHTML(engineer)) )
+
+    htmlForEmployees.push(team.filter(employee => employee.getRole() === "Intern").map(intern => generateInternHTML(intern)) )
 
     return htmlForEmployees.join("")
 }
@@ -52,42 +97,8 @@ module.exports = team => {
 
       <div class="d-flex flex-wrap align-content-around">
        ${generateTeam(team)};
-        <!-- Engineer Card -->
-        <div class="col-sm-4 d-flex justify-content-center">  
-          <div class="card text-white bg-primary mb-3" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title" id="role">Engineer</h5>
-              </div>
-              <ul class="list-group list-group-flush">
-              <li class="list-group-item text-dark" id="engineerName">Name</li>
-                <li class="list-group-item text-dark" id="engineerId">ID No.</li>
-                <li class="list-group-item">
-                  <a href="#" class="card-link" id="engineerGithub">GitHub Link</a>
-                </li>
-              </ul>
-              <div class="card-body ">
-                  <a href="#" class="card-link text-white" id="engineerEmail">Email Address</a>
-              </div>
-          </div>
-        </div>  
-        <!-- Intern Card -->
-       
-        <div class="col-sm-4 d-flex justify-content-center">  
-          <div class="card text-white bg-success mb-3" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title" id="role">Intern</h5>
-              </div>
-              <ul class="list-group list-group-flush">
-              <li class="list-group-item text-dark" id="internName">Name</li>
-                <li class="list-group-item text-dark" id="internId">ID No.</li>
-                <li class="list-group-item text-dark" id="internSchool">School Name</li>
-              </ul>
-              <div class="card-body ">
-                  <a href="#" class="card-link text-white" id="internEmail">Email Address</a>
-              </div>
-          </div>
-        </div>
-      </div>
+      
+        
     </main>
 
 
