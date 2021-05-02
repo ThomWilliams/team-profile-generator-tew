@@ -3,45 +3,39 @@ const Manager = require("../lib/manager");
 
 describe("Manager", () => {
   
-    describe("constructor", () => {
-
-        it("should constuct card data from Manager name, id and email input", () => {
-    
-          const name = "Thom Williams";
-          const id = "7";
-          const email = "thomwilliams1990@gmail.com";
-        
-          const result = new Manager();
-    
-          expect(result).toEqual(name, id, email);
-        });
-    });
-
-    describe("getOfficeNumber", () => {
-
-        it("get the office number for the manager", () => {
-    
-          const officeNumber = "8";
+    it("assign the role of Manager", () => {
       
-          const result = new Manager().getOfficeNumber();
-     
-          expect(result).toEqual(officeNumber);
-        });
+        const result = new Manager ("Thom Williams", 7, "thomwilliams1990@gmail.com", "Manchester");
     
-        });
+          expect(result.getRole()).toBe("Manager");
+    });
 
-  describe("getRole", () => {
-
-    it("get the role of the manager", () => {
-
-      const role = "Manager";
+    it("get the email address of the Manager", () => {
   
-      const result = new Manager().getRole();
- 
-      expect(result).toEqual(role);
+        const result = new Manager ("Thom Williams", 7, "thomwilliams1990@gmail.com", "Manchester");
+  
+      expect(result.getEmail()).toBe("thomwilliams1990@gmail.com");
     });
 
+    it("get the name of the Manager", () => {
+  
+        const result = new Manager ("Thom Williams", 7, "thomwilliams1990@gmail.com", "Manchester");
+  
+      expect(result.getName()).toBe("Thom Williams");
     });
-
+    
+    it("get the id of the Manager", () => {
+  
+        const result = new Manager ("Thom Williams", 7, "thomwilliams1990@gmail.com", "Manchester");
+  
+      expect(result.getId()).toBe(7);
+    });
+    
+    it("get the office number of the manager", () => {
+  
+        const result = new Manager ("Thom Williams", 7, "thomwilliams1990@gmail.com", 88888);
+  
+      expect(result.getOfficeNumber()).toBe(88888);
+    });
 
 });

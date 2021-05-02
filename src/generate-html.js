@@ -16,7 +16,7 @@ const generateTeam = team => {
                 <li class="list-group-item text-dark" id="managerOffice">${manager.getOfficeNumber()}</li>
               </ul>
               <div class="card-body ">
-                <a href="#" class="card-link text-white" id="managerEmail">${manager.getEmail()}</a>
+                <a href="#" class="card-link text-light" id="managerEmail">${manager.getEmail()}</a>
               </div>
           </div>
         </div>`
@@ -36,7 +36,7 @@ const generateTeam = team => {
                 </li>
               </ul>
               <div class="card-body ">
-                  <a href="#" class="card-link text-white" id="engineerEmail">${engineer.getEmail()}</a>
+                  <a href="#" class="card-link text-light" id="engineerEmail">${engineer.getEmail()}</a>
               </div>
           </div>
         </div>  `
@@ -57,7 +57,7 @@ const generateTeam = team => {
                 <li class="list-group-item text-dark" id="internSchool">${intern.getSchool()}</li>
               </ul>
               <div class="card-body ">
-                  <a href="#" class="card-link text-white" id="internEmail">${intern.getEmail()}</a>
+                  <a href="#" class="card-link text-light" id="internEmail">${intern.getEmail()}</a>
               </div>
           </div>
         </div>
@@ -90,7 +90,7 @@ module.exports = team => {
 </head>
 <body>
     <header class="jumbotron bg-primary">
-        <h1 class="text-center text-white" style="font-family: 'Black Ops One', cursive;">My Team</h1>
+        <h1 class="text-center text-light" style="font-family: 'Black Ops One', cursive;">My Team</h1>
     </header>
 
     <main class="container-fluid">

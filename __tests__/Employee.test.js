@@ -2,67 +2,33 @@ const Employee = require("../lib/employee");
 
 
 describe("Employee", () => {
-  describe("constructor", () => {
-
-    it("should constuct card data from employee name, id and email input", () => {
-
-      const name = "Thom Williams";
-      const id = "7";
-      const email = "thomwilliams1990@gmail.com";
   
-      const result = new Employee();
-
-      expect(result).toEqual(name, id, email);
+    it("assign the role of Employee", () => {
+      
+        const result = new Employee ("Thom Williams", 7, "thomwilliams1990@gmail.com", "Employee");
+    
+          expect(result.getRole()).toBe("Employee");
     });
-  });
 
-
-  describe("getName", () => {
-
-    it("get the name of the employee", () => {
-
-      const name = "Thom Williams";
+    it("get the email address of the Employee", () => {
   
-      const result = new Employee().getName();
-
-      expect(result).toEqual(name);
+        const result = new Employee ("Thom Williams", 7, "thomwilliams1990@gmail.com", "Employee");
+  
+      expect(result.getEmail()).toBe("thomwilliams1990@gmail.com");
     });
-  });
 
-  describe("getId", () => {
-
-    it("get the ID of the employee", () => {
-
-      const id = "7";
-
-      const result = new Employee().getId();
-
-      expect(result).toEqual(id);
+    it("get the name of the Employee", () => {
+  
+        const result = new Employee ("Thom Williams", 7, "thomwilliams1990@gmail.com", "Employee");
+  
+      expect(result.getName()).toBe("Thom Williams");
     });
-  });
-
-  describe("getEmail", () => {
-
-    it("get the email address of the employee", () => {
-
-      const email = "thomWilliams1990@gmail.com";
+    
+    it("get the id of the Employee", () => {
   
-      const result = new Employee().getEmail();
+        const result = new Employee ("Thom Williams", 7, "thomwilliams1990@gmail.com", "Employee");
   
-      expect(result).toEqual(email);
-    });
-  });
-
-
-  describe("getRole", () => {
-
-    it("get the role of the employee", () => {
-
-      const role = "Employee";
-  
-      const result = new Employee().getRole();
- 
-      expect(result).toEqual(role);
+      expect(result.getId()).toBe(7);
     });
 
 });
@@ -70,11 +36,6 @@ describe("Employee", () => {
 
 
 
-
-
-
-
-});
 
 
 

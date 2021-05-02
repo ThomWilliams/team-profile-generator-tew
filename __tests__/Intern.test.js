@@ -1,48 +1,42 @@
 const Intern = require("../lib/intern");
 
-
 describe("Intern", () => {
   
-    describe("constructor", () => {
-
-        it("should constuct card data from intern name, id and email input", () => {
-    
-          const name = "Thom Williams";
-          const id = "7";
-          const email = "thomwilliams1990@gmail.com";
+    it("assign the role of intern", () => {
       
-          const result = new Intern();
+        const result = new Intern ("Thom Williams", 7, "thomwilliams1990@gmail.com", "Manchester");
     
-          expect(result).toEqual(name, id, email);
-        });
+          expect(result.getRole()).toBe("Intern");
     });
 
-
-  describe("getSchool", () => {
-
-    it("get the school name of the intern", () => {
-
-      const school = "Manchester";
+    it("get the email address of the Intern", () => {
   
-      const result = new Intern().getSchool();
+        const result = new Intern ("Thom Williams", 7, "thomwilliams1990@gmail.com", "Manchester");
   
-      expect(result).toEqual(school);
+      expect(result.getEmail()).toBe("thomwilliams1990@gmail.com");
     });
-  });
 
-
-  describe("getRole", () => {
-
-    it("get the role of the Intern", () => {
-
-      const role = "Intern";
+    it("get the name of the Intern", () => {
   
-      const result = new Intern().getRole();
- 
-      expect(result).toEqual(role);
+        const result = new Intern ("Thom Williams", 7, "thomwilliams1990@gmail.com", "Manchester");
+  
+      expect(result.getName()).toBe("Thom Williams");
+    });
+    
+    it("get the id of the Intern", () => {
+  
+        const result = new Intern ("Thom Williams", 7, "thomwilliams1990@gmail.com", "Manchester");
+  
+      expect(result.getId()).toBe(7);
+    });
+    
+    it("get the school of the intern", () => {
+  
+        const result = new Intern ("Thom Williams", 7, "thomwilliams1990@gmail.com", "Manchester");
+  
+      expect(result.getSchool()).toBe("Manchester");
     });
 
 });
 
 
-});
