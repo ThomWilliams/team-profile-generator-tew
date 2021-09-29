@@ -67,6 +67,6 @@
   
   [VIDEO DEMO](https://drive.google.com/file/d/139v3jEs7axrVxUYXG-27nflIY-wjp3NZ/view?usp=sharing)
 
-  ![Screenshot of the Mobile version](./assets/mobile.png)
+  ![Screenshot of the Mobile version](./Assets/mobile.png)
 
-  ![Screenshot of the Desktop version](./assets/Desktop.png)
+  ![Screenshot of the Desktop version](./Assets/Desktop.png)
